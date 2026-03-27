@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denni Zapisnik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="panel">
+      <p class="eyebrow">GitHub Pages + GitHub API</p>
+      <h1>Denni zapis do souboru</h1>
+      <p class="intro">
+        Kazdy odeslany zaznam se ulozi do souboru podle aktualniho data ve formatu
+        <code>entries/YYYY-MM-DD.txt</code>.
+      </p>
+
+      <form id="entry-form" class="form">
+        <label for="token-input">GitHub fine-grained token</label>
+        <input
+          id="token-input"
+          name="token"
+          type="password"
+          placeholder="GitHub token s Contents: write pro repo test3"
+          autocomplete="off"
+          required
+        >
+
+        <label for="entry-input">Text zaznamu</label>
+        <textarea
+          id="entry-input"
+          name="entry"
+          rows="8"
+          placeholder="Sem napis zaznam, ktery se prida do denniho txt souboru."
+          required
+        ></textarea>
+
+        <button type="submit">Ulozit zaznam</button>
+      </form>
+
+      <div class="meta">
+        <p id="target-file">Cilovy soubor: entries/----</p>
+        <p id="status-text">Pripraveno.</p>
+      </div>
+
+      <article class="result">
+        <h2>Posledni vysledek</h2>
+        <pre id="result-output">Zatim nebyl odeslan zadny zaznam.</pre>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
